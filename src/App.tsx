@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import { use100vh } from 'react-div-100vh';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import styled, { createGlobalStyle } from 'styled-components';
 import './App.css';
+import { PageInformation } from './pages/PageInfomation';
+import { PageReserve } from './pages/PageReserve';
+import { PageRules } from './pages/PageRules';
+
+const Global = createGlobalStyle`
+  body {
+    background-color: #000062;
+    font-family: "Orbit", sans-serif;
+  }
+`
+
+const Frame = styled.div`
+  display: flex;
+  height: 100%;
+`
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  use100vh()
+  return <>
+    <Global/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="information" element={<PageInformation/>}></Route>
+        <Route path="rules" element={<PageRules/>}></Route>
+        <Route path="reserve" element={<PageReserve/>}></Route>
+      </Routes>
+    </BrowserRouter>
+  </>
 }
 
 export default App;
