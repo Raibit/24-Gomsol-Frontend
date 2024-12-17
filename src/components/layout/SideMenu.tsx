@@ -14,5 +14,6 @@ export function SideMenu(props: { selected: string }) {
     <SideMenuButton path="information" selected={props.selected}>소개</SideMenuButton>
     <SideMenuButton path="rules" selected={props.selected}>규칙</SideMenuButton>
     <SideMenuButton path="reserve" selected={props.selected}>예약</SideMenuButton>
+    <SideMenuButton path="ranking" selected={props.selected}>순위</SideMenuButton>
   </SideMenuFrame>
 }
