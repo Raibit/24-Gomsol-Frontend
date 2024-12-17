@@ -60,6 +60,7 @@ const Button = styled.button`
 
   text-align: center;
   font-weight: 800;
+  font-size: 14pt;
 
   -webkit-user-select: none;
   -moz-user-select: none;
