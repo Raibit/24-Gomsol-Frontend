@@ -79,16 +79,15 @@ const Button = styled.button`
 
 type changeHandler = (event: ChangeEvent<HTMLInputElement>, index: number) => void
 
-function InputLine(props: { index: number, players: User[], numberHandler: changeHandler, nameHandler: changeHandler }) {
+function InputLine(props: { index: number, players: User<string>[], numberHandler: changeHandler, nameHandler: changeHandler }) {
   return <Row>
     <TextLine>{props.index ? "팀원" : "팀장"}</TextLine>
     <Input 
-        value={props.players[props.index].id}
-        type="number" 
-        placeholder="학번" 
-        name={`number-${props.index}`} 
-        onChange={e => props.numberHandler(e, props.index)} 
-      />
+      value={props.players[props.index].id}
+      placeholder="학번" 
+      name={`number-${props.index}`} 
+      onChange={e => props.numberHandler(e, props.index)} 
+    />
     <Input 
       value={props.players[props.index].name}
       placeholder="이름" 
@@ -99,12 +98,11 @@ function InputLine(props: { index: number, players: User[], numberHandler: chang
 }
 
 export function PageReserve() {
-  const [players, setPlayers] = useState<User[]>(new Array(4).fill(0).map(_ => getDefaultUser()))
+  const [players, setPlayers] = useState<User<string>[]>(new Array(4).fill(0).map(_ => getDefaultUser()))
 
   function updateNumberHandler(event: ChangeEvent<HTMLInputElement>, index: number) {
     const updated = [...players]
-    const parsed = parseInt(event.target.value)
-    updated[index].id = Number.isNaN(parsed) ? 0 : parsed;
+    updated[index].id = event.target.value;
     setPlayers(updated)
   }
 
@@ -130,7 +128,7 @@ export function PageReserve() {
 
   const reserve: FormEventHandler<HTMLFormElement> = async event => {
     event.preventDefault()
-    const result = await postReserves({ members: players })
+    const result = await postReserves({ members: players.map(player => { return { ...player, id: parseInt(player.id) ?? 0 } }) })
     switch (result) {
       case ReserveResponse.OUTLIER: return alert("예약에 실패했습니다.\n잘못된 학번이나 이름을 입력하지 않았는지 확인하세요.")
       case ReserveResponse.DUPLICATED: return alert("예약에 실패했습니다.\n구성원 중에 이미 예약된 사람이 있습니다.")

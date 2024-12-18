@@ -2,7 +2,11 @@ import { client } from "./client";
 import { Reserve, Team } from "./model";
 
 export async function getTeams() {
-  return await client.get<Team[]>('/api/teams')
+  try {
+    return await client.get<Team[]>('/api/teams')
+  } catch {
+    return null
+  }
 }
 
 export enum ReserveResponse {

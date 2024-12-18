@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import styled from "styled-components";
 
 const Text = styled.div`
-  font-size: 18pt;
+  font-size: 16pt;
   font-weight: 300;
   margin-bottom: 10px;
 

@@ -1,5 +1,5 @@
-export interface User {
-  id: number;
+export interface User<IdType extends number | string = number> {
+  id: IdType;
   name: string;
 }
 
@@ -10,6 +10,6 @@ export interface Team {
 
 export type Reserve = Omit<Team, "score">
 
-export function getDefaultUser(): User {
-  return { name: "", id: 0 }
+export function getDefaultUser(): User<string> {
+  return { name: "", id: "" }
 }
