@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { SideMenuButton } from "./SideMenuButton";
 
 const SideMenuFrame = styled.div`
-  width: 240px;
+  width: 160px;
   height: 100%;
+  flex-shrink: 0;
 
   background-color: #fff;
   border-radius: 10px;

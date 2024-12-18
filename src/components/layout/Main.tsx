@@ -12,6 +12,8 @@ const MainFrame = styled.div`
 
   background-color: #fff;
   border-radius: 10px;
+  
+  flex-shrink: 1;
 `
 
 export function Main(props: { children?: ReactNode }) {
