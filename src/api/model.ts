@@ -6,6 +6,7 @@ export interface User<IdType extends number | string = number> {
 export interface Team {
   members: User[];
   score: null | number;
+  note: string;
 }
 
 export type Reserve = Omit<Team, "score">

@@ -31,6 +31,12 @@ const Input = styled.input`
   }
 `
 
+const NoteInput = styled(Input)`
+  width: calc(100% - 30px);
+  height: 20px;
+  margin-left: 0;
+`
+
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -99,6 +105,7 @@ function InputLine(props: { index: number, players: User<string>[], numberHandle
 
 export function PageReserve() {
   const [players, setPlayers] = useState<User<string>[]>(new Array(4).fill(0).map(_ => getDefaultUser()))
+  const [note, setNote] = useState<string>("");
 
   function updateNumberHandler(event: ChangeEvent<HTMLInputElement>, index: number) {
     const updated = [...players]
@@ -110,6 +117,10 @@ export function PageReserve() {
     const updated = [...players]
     updated[index].name = event.target.value;
     setPlayers(updated)
+  }
+
+  function updateNoteHandler(event: ChangeEvent<HTMLInputElement>) {
+    setNote(event.target.value);
   }
 
   function increaseHandler() {
@@ -128,7 +139,10 @@ export function PageReserve() {
 
   const reserve: FormEventHandler<HTMLFormElement> = async event => {
     event.preventDefault()
-    const result = await postReserves({ members: players.map(player => { return { ...player, id: parseInt(player.id) ?? 0 } }) })
+    const result = await postReserves({ 
+      members: players.map(player => { return { ...player, id: parseInt(player.id) ?? 0 } }),
+      note: note
+    })
     switch (result) {
       case ReserveResponse.OUTLIER: return alert("예약에 실패했습니다.\n잘못된 학번이나 이름을 입력하지 않았는지 확인하세요.")
       case ReserveResponse.DUPLICATED: return alert("예약에 실패했습니다.\n구성원 중에 이미 예약된 사람이 있습니다.")
@@ -153,6 +167,12 @@ export function PageReserve() {
             nameHandler={updateNameHandler}
           ></InputLine>
         )}
+        <NoteInput 
+          value={note}
+          placeholder="예약 불가능한 시간 (예: 3시-5시, 4시-5시 30분... 등등)" 
+          name="note" 
+          onChange={updateNoteHandler}
+        />
         <Row>
           <Button type="submit">예약하기!</Button>
         </Row>
