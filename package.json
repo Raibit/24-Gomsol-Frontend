@@ -2,6 +2,7 @@
   "name": "24-gomsol-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://raibit.github.io/24-Gomsol-Frontend/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -11,6 +12,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "axios": "^1.7.9",
+    "gh-pages": "^6.2.0",
     "react": "^18.3.1",
     "react-div-100vh": "^0.7.0",
     "react-dom": "^18.3.1",
@@ -24,7 +26,8 @@
     "start": "set BROWSER=none && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
