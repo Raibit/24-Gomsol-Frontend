@@ -1,5 +1,5 @@
 import { client } from "./client";
-import { Reserve, Team } from "./model";
+import { ManagingData, Reserve, Team } from "./model";
 
 export async function getTeams() {
   try {
@@ -25,5 +25,14 @@ export async function postReserves(data: Reserve) {
     return ReserveResponse.ERROR;
   } catch {
     return ReserveResponse.ERROR;
+  }
+}
+
+export async function postManaging(data: ManagingData) {
+  try {
+    const res = await client.post<ManagingData>('/api/manage', data)
+    return res.statusText;
+  } catch {
+    return 403;
   }
 }

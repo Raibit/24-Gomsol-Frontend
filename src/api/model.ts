@@ -11,6 +11,12 @@ export interface Team {
 
 export type Reserve = Omit<Team, "score">
 
+export interface ManagingData { 
+  password: string, 
+  leader: string, 
+  score: string 
+}
+
 export function getDefaultUser(): User<string> {
   return { name: "", id: "" }
 }

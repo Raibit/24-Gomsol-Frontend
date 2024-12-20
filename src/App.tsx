@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 import './App.css';
 import { Page404 } from './pages/Page404';
 import { PageInformation } from './pages/PageInfomation';
+import { PageManaging } from './pages/PageManaging';
 import { PageRanking } from './pages/PageRanking';
 import { PageReserve } from './pages/PageReserve';
 import { PageRules } from './pages/PageRules';
@@ -28,6 +29,7 @@ function App() {
         <Route path="rules" element={<PageRules/>}></Route>
         <Route path="reserve" element={<PageReserve/>}></Route>
         <Route path="ranking" element={<PageRanking/>}></Route>
+        <Route path="managing" element={<PageManaging/>}></Route>
         <Route path="*" element={<Page404/>}></Route>
       </Routes>
     </BrowserRouter>
