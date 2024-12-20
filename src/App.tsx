@@ -22,7 +22,7 @@ function App() {
   use100vh()
   return <>
     <Global/>
-    <BrowserRouter>
+    <BrowserRouter basename="/24-Gomsol-Frontend">
       <Routes>
         <Route path="information" element={<PageInformation/>}></Route>
         <Route path="rules" element={<PageRules/>}></Route>
