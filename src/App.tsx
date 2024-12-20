@@ -1,5 +1,5 @@
 import { use100vh } from 'react-div-100vh';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import './App.css';
 import { Page404 } from './pages/Page404';
@@ -22,7 +22,7 @@ function App() {
   use100vh()
   return <>
     <Global/>
-    <BrowserRouter basename="/24-Gomsol-Frontend/">
+    <HashRouter>
       <Routes>
         <Route path="information" element={<PageInformation/>}></Route>
         <Route path="rules" element={<PageRules/>}></Route>
@@ -30,7 +30,7 @@ function App() {
         <Route path="managing" element={<PageManaging/>}></Route>
         <Route path="*" element={<Page404/>}></Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </>
 }
 

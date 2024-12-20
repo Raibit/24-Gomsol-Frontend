@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { Layout } from "../components/layout/Layout"
 import { TextLine } from "../components/text/TextLine"
 
-const Video = <iframe frameBorder="0" width="100%" height="100%" src="https://www.youtube.com/embed/n6WaTObHRJM?si=e8fZw08BSm7JxugX" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+const Video = <iframe frameBorder="0" width="100%" height="100%" src=" https://youtube.com/embed/v7bqPftZFqQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 const VideoFrame = styled.div`
   width: 100%;
   height: min(60%, 40vw);
