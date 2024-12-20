@@ -5,7 +5,6 @@ import './App.css';
 import { Page404 } from './pages/Page404';
 import { PageInformation } from './pages/PageInfomation';
 import { PageRanking } from './pages/PageRanking';
-import { PageReserve } from './pages/PageReserve';
 import { PageRules } from './pages/PageRules';
 
 const Global = createGlobalStyle`
@@ -26,7 +25,6 @@ function App() {
       <Routes>
         <Route path="information" element={<PageInformation/>}></Route>
         <Route path="rules" element={<PageRules/>}></Route>
-        <Route path="reserve" element={<PageReserve/>}></Route>
         <Route path="ranking" element={<PageRanking/>}></Route>
         <Route path="*" element={<Page404/>}></Route>
       </Routes>
