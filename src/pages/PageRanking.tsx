@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Team } from "../api/model";
-import { getTeams } from "../api/teams";
 import { Layout } from "../components/layout/Layout";
 import { TextLine } from "../components/text/TextLine";
 import { TextTitle } from "../components/text/TextTitle";
+import rank from "./rank.json";
 
 
 function getRankColor(index: number) {
@@ -125,7 +125,10 @@ function RankLine(props: { index: number, team: Team }) {
 
 export function PageRanking() {
   const [teams, setTeams] = useState<Team[] | null>(null);
-  useEffect(() => { getTeams().then(res => !res ? alert("랭킹 로딩에 실패했습니다.") : setTeams(res.data.sort((a, b) => (b.score ?? 0) - (a.score ?? 0)))) }, [])
+  useEffect(() => { 
+    setTeams(rank as Team[])
+    // getTeams().then(res => !res ? alert("랭킹 로딩에 실패했습니다.") : setTeams(res.data.sort((a, b) => (b.score ?? 0) - (a.score ?? 0)))) 
+  }, [])
 
   return <Layout selected="ranking">
     <TextTitle>점수판</TextTitle>
