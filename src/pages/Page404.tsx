@@ -24,7 +24,7 @@ export function Page404() {
     <Frame>
       <TextTitle>페이지를 찾을 수 없어요.</TextTitle>
       <TextLine>
-        <To href="/information">메인 페이지로 이동하기</To>
+        <To href="information">메인 페이지로 이동하기</To>
       </TextLine>
     </Frame>
   </Div100vh>
