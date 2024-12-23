@@ -114,7 +114,6 @@ function RankLine(props: { index: number, team: Team }) {
     <RankSubstring>{getSubstring(props.index + 1)}</RankSubstring>
     <Members>
       {props.team.members.map((member, index) => <MemberFrame key={`member-${props.index}-${index}`}>
-        <MemberNumber>{member.id}</MemberNumber>
         <MemberName>{member.name}</MemberName>
       </MemberFrame>)}
     </Members>
