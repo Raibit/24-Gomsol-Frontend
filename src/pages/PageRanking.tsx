@@ -125,7 +125,9 @@ function RankLine(props: { index: number, team: Team }) {
 export function PageRanking() {
   const [teams, setTeams] = useState<Team[] | null>(null);
   useEffect(() => { 
-    setTeams((rank as Team[]).sort((a, b) => (b.score ?? 0) - (a.score ?? 0)))
+    const data = rank as Team[]
+    data.sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
+    setTeams(data)
     // getTeams().then(res => !res ? alert("랭킹 로딩에 실패했습니다.") : setTeams(res.data.sort((a, b) => (b.score ?? 0) - (a.score ?? 0)))) 
   }, [])
 
