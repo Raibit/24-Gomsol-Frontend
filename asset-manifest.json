@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/24-Gomsol-Frontend/static/css/main.1a7488ce.css",
-    "main.js": "/24-Gomsol-Frontend/static/js/main.1c53d643.js",
+    "main.js": "/24-Gomsol-Frontend/static/js/main.cae298b6.js",
     "static/js/453.e17350b4.chunk.js": "/24-Gomsol-Frontend/static/js/453.e17350b4.chunk.js",
     "index.html": "/24-Gomsol-Frontend/index.html",
     "main.1a7488ce.css.map": "/24-Gomsol-Frontend/static/css/main.1a7488ce.css.map",
-    "main.1c53d643.js.map": "/24-Gomsol-Frontend/static/js/main.1c53d643.js.map",
+    "main.cae298b6.js.map": "/24-Gomsol-Frontend/static/js/main.cae298b6.js.map",
     "453.e17350b4.chunk.js.map": "/24-Gomsol-Frontend/static/js/453.e17350b4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1a7488ce.css",
-    "static/js/main.1c53d643.js"
+    "static/js/main.cae298b6.js"
   ]
 }
