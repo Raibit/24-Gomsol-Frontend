@@ -27,7 +27,7 @@ const LineFrame = styled.div<{ index: number}>`
 `
 
 const RankIndex = styled.div`
-  width: 36px;
+  width: 64px;
   height: 100%;
 
   color: #fff;
@@ -50,7 +50,7 @@ const RankSubstring = styled.div`
 `
 
 const Members = styled.div`
-  margin-left: 80px;
+  margin-left: 48px;
 
   width: 100%;
   height: 100%;

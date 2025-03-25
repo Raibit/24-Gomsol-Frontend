@@ -3,7 +3,10 @@ import styled from "styled-components";
 
 const MainFrame = styled.div`
   width: 100%;
-  height: calc(100% - 20px);
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
 
   padding: 10px;
   padding-left: 30px;
